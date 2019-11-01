@@ -7,7 +7,7 @@
   </forward>
   <bridge name='openshift4' stp='on' delay='0'/>
   <domain name='openshift4'/>
-  <ip address='192.168.1.1' netmask='255.255.255.0'>
+  <ip address='192.168.3.1' netmask='255.255.255.0'>
   </ip>
 </network>
 
