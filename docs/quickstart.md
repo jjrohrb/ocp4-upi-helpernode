@@ -60,9 +60,9 @@ virt-install --name="ocp4-aHelper" --vcpus=2 --ram=4096 \
 
 The provided Kickstart file installs the helper with the following settings (which is based on the [virt-net.xml](examples/virt-net.xml) file that was used before).
 
-* IP - 192.168.7.77
+* IP - 10.111.222.7
 * NetMask - 255.255.255.0
-* Default Gateway - 192.168.7.1
+* Default Gateway - 10.111.222.1
 * DNS Server - 8.8.8.8
 
 You can watch the progress by lauching the viewer
@@ -118,7 +118,7 @@ done
 After the helper node is installed; login to it
 
 ```
-ssh root@192.168.7.77
+ssh root@10.111.222.77
 ```
 
 Install `ansible` and `git` and clone this repo
@@ -250,7 +250,7 @@ Boot/install the VMs in the following order
 On your laptop/workstation visit the status page 
 
 ```
-firefox http://192.168.7.77:9000
+firefox http://10.111.222.77:9000
 ```
 
 You'll see the bootstrap turn "green" and then the masters turn "green", then the bootstrap turn "red". This is your indication that you can continue.

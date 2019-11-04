@@ -59,9 +59,9 @@ virt-install --name="ocp4-aHelper" --vcpus=2 --ram=4096 \
 
 The provided Kickstart file installs the helper with the following settings (which is based on the [virt-net.xml](examples/virt-net.xml) file that was used before).
 
-* IP - 192.168.7.77
+* IP - 10.111.222.77
 * NetMask - 255.255.255.0
-* Default Gateway - 192.168.7.1
+* Default Gateway - 10.111.222.1
 * DNS Server - 8.8.8.8
 
 > **NOTE** If you want to use macvtap (i.e. have the VM "be on your network"); you can use `--network type=direct,source=enp0s31f6,source_mode=bridge,model=virtio` ; replace the interface where applicable
@@ -83,7 +83,7 @@ virsh start ocp4-aHelper
 After the helper node is installed; login to it
 
 ```
-ssh root@192.168.7.77
+ssh root@10.111.222.77
 ```
 
 Install `ansible` and `git` and clone this repo
@@ -213,11 +213,11 @@ Once booted; press `tab` on the boot menu
 Add your staticips and coreos options. Here is an example of what I used for my bootstrap node. (type this **ALL IN ONE LINE** ...I only used linebreaks here for ease of readability...but type it all in one line)
 
 ```
-ip=192.168.7.20::192.168.7.1:255.255.255.0:bootstrap.ocp4.example.com:enp1s0:none
-nameserver=192.168.7.77
+ip=10.111.222.20::10.111.222.1:255.255.255.0:bootstrap.ocp4.example.com:enp1s0:none
+nameserver=10.111.222.77
 coreos.inst.install_dev=vda
-coreos.inst.image_url=http://192.168.7.77:8080/install/bios.raw.gz
-coreos.inst.ignition_url=http://192.168.7.77:8080/ignition/bootstrap-static.ign
+coreos.inst.image_url=http://10.111.222.77:8080/install/bios.raw.gz
+coreos.inst.ignition_url=http://10.111.222.77:8080/ignition/bootstrap-static.ign
 ```
 
 ^ Do this for **ALL** of your VMs!!!
@@ -233,7 +233,7 @@ Boot/install the VMs in the following order
 On your laptop/workstation visit the status page 
 
 ```
-firefox http://192.168.7.77:9000
+firefox http://10.111.222.77:9000
 ```
 
 You'll see the bootstrap turn "green" and then the masters turn "green", then the bootstrap turn "red". This is your indication that you can continue.
