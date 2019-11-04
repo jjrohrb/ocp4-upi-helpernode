@@ -22,7 +22,7 @@ cd ~/ocp4-workingdir
 Download the virtual network configuration file, [virt-net.xml](examples/virt-net.xml)
 
 ```
-wget https://raw.githubusercontent.com/christianh814/ocp4-upi-helpernode/master/docs/examples/virt-net.xml
+wget https://raw.githubusercontent.com/jjrohrb/ocp4-upi-helpernode/master/docs/examples/virt-net.xml
 ```
 
 Create a virtual network using this file file provided in this repo (modify if you need to).
@@ -38,12 +38,12 @@ virsh net-autostart openshift4
 virsh net-start openshift4
 ```
 
-## Create a CentOS 7 VM
+## Create a RHEL 8 VM
 
 Download the [Kickstart file](examples/helper-ks.cfg) for the helper node.
 
 ```
-wget https://raw.githubusercontent.com/christianh814/ocp4-upi-helpernode/master/docs/examples/helper-ks.cfg
+wget https://raw.githubusercontent.com/jjrohrb/ocp4-upi-helpernode/master/docs/examples/helper-ks.cfg
 ```
 
 Edit `helper-ks.cfg` for your environment and use it to install the helper. The following command installs it "unattended".
@@ -53,8 +53,8 @@ Edit `helper-ks.cfg` for your environment and use it to install the helper. The 
 ```
 virt-install --name="ocp4-aHelper" --vcpus=2 --ram=4096 \
 --disk path=/var/lib/libvirt/images/ocp4-aHelper.qcow2,bus=virtio,size=30 \
---os-variant centos7.0 --network network=openshift4,model=virtio \
---boot menu=on --location /var/lib/libvirt/ISO/CentOS-7-x86_64-Minimal-1810.iso \
+--os-variant rhel8.0 --network network=openshift4,model=virtio \
+--boot menu=on --location /var/lib/libvirt/ISO/rhel-8.0-x86_64-dvd.iso \
 --initrd-inject helper-ks.cfg --extra-args "inst.ks=file:/helper-ks.cfg" --noautoconsole
 ```
 
@@ -127,7 +127,7 @@ Install `ansible` and `git` and clone this repo
 
 ```
 yum -y install ansible git
-git clone https://github.com/christianh814/ocp4-upi-helpernode
+git clone https://github.com/jjrohrb/ocp4-upi-helpernode
 cd ocp4-upi-helpernode
 ```
 
