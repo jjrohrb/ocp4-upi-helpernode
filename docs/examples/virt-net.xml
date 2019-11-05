@@ -6,7 +6,7 @@
     </nat>
   </forward>
   <bridge name='openshift4' stp='on' delay='0'/>
-  <domain name='openshift4'/>
+  <domain name='mastiffcrossing.dog'/>
   <ip address='10.111.222.1' netmask='255.255.255.0'>
   </ip>
 </network>

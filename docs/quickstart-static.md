@@ -5,7 +5,7 @@ This quickstart will get you up and running on `libvirt`. This should work on ot
 To start login to your virtualization server / hypervisor
 
 ```
-ssh virt0.example.com
+ssh virt0.mastiffcrossing.dog
 ```
 
 And create a working directory
@@ -129,7 +129,7 @@ Next, create an `install-config.yaml` file
 ```
 cat <<EOF > install-config.yaml
 apiVersion: v1
-baseDomain: example.com
+baseDomain: mastiffcrossing.dog
 compute:
 - hyperthreading: Enabled
   name: worker
@@ -213,7 +213,7 @@ Once booted; press `tab` on the boot menu
 Add your staticips and coreos options. Here is an example of what I used for my bootstrap node. (type this **ALL IN ONE LINE** ...I only used linebreaks here for ease of readability...but type it all in one line)
 
 ```
-ip=10.111.222.20::10.111.222.1:255.255.255.0:bootstrap.ocp4.example.com:enp1s0:none
+ip=10.111.222.20::10.111.222.1:255.255.255.0:bootstrap.ocp4.mastiffcrossing.dog:enp1s0:none
 nameserver=10.111.222.77
 coreos.inst.install_dev=vda
 coreos.inst.image_url=http://10.111.222.77:8080/install/bios.raw.gz
@@ -251,7 +251,7 @@ Once you see this message below...
 ```
 DEBUG OpenShift Installer v4.2.0-201905212232-dirty 
 DEBUG Built from commit 71d8978039726046929729ad15302973e3da18ce 
-INFO Waiting up to 30m0s for the Kubernetes API at https://api.ocp4.example.com:6443... 
+INFO Waiting up to 30m0s for the Kubernetes API at https://api.ocp4.mastiffcrossing.dog:6443... 
 INFO API v1.13.4+838b4fa up                       
 INFO Waiting up to 30m0s for bootstrapping to complete... 
 DEBUG Bootstrap status: complete                   

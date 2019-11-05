@@ -45,7 +45,7 @@ This section sets up your DNS server.
 
 ```
 dns:
-  domain: "example.com"
+  domain: "mastiffcrossing.dog"
   clusterid: "ocp4"
   forwarder1: "8.8.8.8"
   forwarder2: "8.8.4.4"
@@ -58,9 +58,9 @@ Explanation of the DNS variables:
 * `dns.forwarder1` - Tis will be set up as the DNS forwarder. This is usually one of the corprate (or "upstream") DNS servers.
 * `dns.forwarder2` - Tis will be set up as the second DNS forwarder. This is usually one of the corprate (or "upstream") DNS servers.
 
-The DNS server will be set up using `dns.clusterid` + `dns.domain` as the domain it's serving. In the above example, the helper will be setup to be the SOA for `ocp4.example.com`. The helper will also be setup as it's [own DNS server](../templates/resolv.conf.j2)
+The DNS server will be set up using `dns.clusterid` + `dns.domain` as the domain it's serving. In the above example, the helper will be setup to be the SOA for `ocp4.mastiffcrossing.dog`. The helper will also be setup as it's [own DNS server](../templates/resolv.conf.j2)
 
-**NOTE**: Although you _CAN_ use the helper as your dns server. It's best to have your DNS server delegate the `dns.clusterid` + `dns.domain` domain to the helper (i.e. Delegate `ocp4.example.com` to the helper)
+**NOTE**: Although you _CAN_ use the helper as your dns server. It's best to have your DNS server delegate the `dns.clusterid` + `dns.domain` domain to the helper (i.e. Delegate `ocp4.mastiffcrossing.dog` to the helper)
 
 ## DHCP Section
 

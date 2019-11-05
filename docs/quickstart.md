@@ -7,7 +7,7 @@ This quickstart will get you up and running on `libvirt`. This should work on ot
 To start login to your virtualization server / hypervisor
 
 ```
-ssh virt0.example.com
+ssh virt0.mastiffcrossing.dog
 ```
 
 And create a working directory
@@ -173,7 +173,7 @@ Next, create an `install-config.yaml` file
 ```
 cat <<EOF > install-config.yaml
 apiVersion: v1
-baseDomain: example.com
+baseDomain: mastiffcrossing.dog
 compute:
 - hyperthreading: Enabled
   name: worker
@@ -268,7 +268,7 @@ Once you see this message below...
 ```
 DEBUG OpenShift Installer v4.2.0-201905212232-dirty 
 DEBUG Built from commit 71d8978039726046929729ad15302973e3da18ce 
-INFO Waiting up to 30m0s for the Kubernetes API at https://api.ocp4.example.com:6443... 
+INFO Waiting up to 30m0s for the Kubernetes API at https://api.ocp4.mastiffcrossing.dog:6443... 
 INFO API v1.13.4+838b4fa up                       
 INFO Waiting up to 30m0s for bootstrapping to complete... 
 DEBUG Bootstrap status: complete                   
